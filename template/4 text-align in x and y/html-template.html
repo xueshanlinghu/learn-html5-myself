@@ -1,0 +1,72 @@
+<!--每种浏览器内部都有许多渲染模式，例如，HTML、XHTML等等。
+我们制作的网页首先需要告诉浏览器如何用正确的方式渲染他。
+所以输入的<idoctype>标签，形同一个声明，告诉浏览子：
+“给劳资，使用这个标准、兼容的模式来解析我写的HTML页面”-->
+<!--注释内容，标签外部注释用这个-->
+<!doctype html>
+<html>
+  <!--<head>标签包含了对HTML5页面各种属性、配置信息的描述。-->
+  <head>
+    <!--<title>标签，就是网页标题-->
+    <title>html模板|源码含注释|雪山凌狐教程</title>
+    <!--语言，就是页面的编码格式。用<meta>标签的charset进行设置。
+建议使用“UTF-8”，很简单，这是“万国码”，这样就可以愉快的在页面上显示，中文、英文了。-->
+    <meta charset = "utf-8">
+    <!--需要创建CSS样式代码，来指定页面元素的呈现形式，就是将图片显示为页面背景。在定义CSS之前，需要创建相应的容器，来容纳这些样式。通常是在head创建一个style元素来作为样式的容器。-->
+    <style type="text/css">
+      html,body{
+        /*为了确保照片自适应屏幕显示，需要给body以及body的父级（html）设置height属性，使之充满全屏。css内部多行注释用这个。*/
+        height: 100%;
+        /*设置字体颜色*/
+        color: yellow;
+      }
+      /*由于css有继承机制，后面的body会继承前面写的属性，实际也可以不写，只是为了演示。*/
+      body{
+        /*使用url来找到图片，因为是相对引用，直接输入文件夹名找到文件即可*/
+        /*设置body的background属性在纵向和横向两个方向上居中*/
+        background: url(image/background.jpg) center center;
+        /*设置背景图根据浏览器大小进行相应缩放*/
+        background-size: cover;
+
+        /*算是一个潜规则。通过预设内边距、外边距为0，提高自主控制。
+        其中margin为外边距，padding为内边距。*/
+        margin: 0;
+        padding: 0;
+
+        /*当你想要设置container的top属性，那么前提条件必须是：
+        container的定位方式必须是：“absolute绝对定位”
+        而container的绝对定位必须是父级body：“relative相对定位”*/
+        /*父级要为相对定位*/
+        position: relative;
+      }
+      /* #为选择器选择div id*/
+      #container{
+        /*水平居中*/
+        /*撑开宽度到整个画面*/
+        width: 100%;
+        /*让文字居中*/
+        text-align: center;
+
+        /*container内部要为绝对定位*/
+        position: absolute;
+
+        /*垂直居中*/
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    </style>
+  </head>
+  <!--body，身体，你懂得，就是展现在你面前，允许干一些事情的地方！-->
+  <body>
+    <!--<div>区块,id为区块的名字，唯一-->
+    <div id="container">
+      <!--<h1>标题标签,从h1到h6逐步变小-->
+      <h1>我爱雪山凌狐</h1>
+      <!--<p>段落标签,会自己另起一个段落-->
+      <p>www.xueshanlinghu.com - 雪山凌狐教程</p>
+      <!--<a>链接标签,在href里面可以定义链接到的url地址，还能定义标签的文本，比如传送门-->
+      <a href="http://www.xueshanlinghu.com">传送门</a>
+      <a href="image/css-color.png">想看颜色对照表的点这里</a>
+    </div>
+  </body>
+</html>
